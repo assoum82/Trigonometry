@@ -1,7 +1,7 @@
 
 public class Point {
-	 private int ab;
-	 private int ord;
+	 private double ab; // tyoe réel 
+	 private double ord;
 	 public Point() {
 	 	ab = 0;
 	 	ord = 0;
@@ -34,7 +34,7 @@ public class Point {
 	 		this.ord = ord;
 	 	}
 	 
-	 	public float getAb() {
+	 	public float getAb() { //int ou float ??
 	 		return ab;
 	 	}
 	
@@ -69,7 +69,7 @@ public class Sagment {
 		return new Sagment((A.symertie()), (B.symertie()));
 	}
 	public String toString() {
-		return "" + A.toString() + "" + B.toString() + "";
+		return "" + A + "" + B + ""; // toString() est appelée automatiquement 
 	}
 
 }
@@ -101,7 +101,7 @@ public class Circle {
  		return new Circle(center.symertie(), radius);
  	}
  	public String toString() {
- 		return " rayon=" + radius + ", center=" + center.toString() + "";
+ 		return " rayon=" + radius + ", center=" + center + "";
  	}
  
  	public float getRadius() {
@@ -121,13 +121,13 @@ public class MainTest {
 	Point A = new Point();
 	Point B = new Point(5, 5);
 	Point C = new Point(3, 8);
-	System.out.println("the point A my coodinates are: A " + A.toString());
-	System.out.println("the point B my coodinates are : B " + B.toString());
-	System.out.println("the point C my coodinates : C " + C.toString());
+	System.out.println("the point A my coodinates are: A " + A);
+	System.out.println("the point B my coodinates are : B " + B);
+	System.out.println("the point C my coodinates : C " + C);
 	System.out.println("\n ");
-	System.out.println("the image of A est : A-1:" + A.symertie().toString());
-	System.out.println("the image of B est : B-1:" + B.symertie().toString());
-	System.out.println("the image of C est : A-1:" + C.symertie().toString());
+	System.out.println("the image of A est : A-1:" + A.symertie());
+	System.out.println("the image of B est : B-1:" + B.symertie());
+	System.out.println("the image of C est : A-1:" + C.symertie());
 	//end of ex1
 	System.out.println("\n ");
 	System.out.println("===================");
@@ -137,15 +137,15 @@ public class MainTest {
 	System.out.println("the sagment AB =" + AB.distance(A, B));
 	System.out.println("the sagment BC =" + BC.distance(B, C));
 	System.out.println("Create image of sagment  BC with respect to the axe of coodonates \n");
-	System.out.println("the image of BC is CB" + BC.symetrie(B, C).toString());
+	System.out.println("the image of BC is CB" + BC.symetrie(B, C));
 	// end of ex2
 	System.out.println("\n ");
 	System.out.println("================");
 	System.out.println("create two different circles in the space \n ");
 	Circle c1 = new Circle(4);
 	Circle c2 = new Circle(B, 3);
-	System.out.println("the circle c1  : " + c1.toString() + "perimeter=" + (c1.getRadius())
-	+ " its image  c1 " + c1.symetrie(c1.center).toString());
-	System.out.println("the circle c2  : " + c2.toString() + "perimeter=" + c2.perimeter(c2.getRadius())			
-	+ " its image  c2 " + c2.symetrie(c2.center).toString());
+	System.out.println("the circle c1  : " + c1 + "perimeter=" + (c1.getRadius())
+	+ " its image  c1 " + c1.symetrie(c1.center));
+	System.out.println("the circle c2  : " + c2 + "perimeter=" + c2.perimeter(c2.getRadius())			
+	+ " its image  c2 " + c2.symetrie(c2.center));
 	}}
